@@ -1,0 +1,15 @@
+br/com/ada/mscomprovantes/domain/dto/ComprovanteResponseDto.class
+br/com/ada/mscomprovantes/domain/dto/ComprovanteDetalheDto.class
+br/com/ada/mscomprovantes/config/RabbitMQConfig.class
+br/com/ada/mscomprovantes/config/RedisConfig.class
+br/com/ada/mscomprovantes/domain/enums/TipoDocumento.class
+br/com/ada/mscomprovantes/controller/ComprovanteController.class
+br/com/ada/mscomprovantes/domain/entity/Comprovante.class
+br/com/ada/mscomprovantes/service/ComprovanteService.class
+br/com/ada/mscomprovantes/MsComprovantesApplication.class
+br/com/ada/mscomprovantes/controller/GlobalExceptionHandler.class
+br/com/ada/mscomprovantes/messaging/ComprovanteConsumer.class
+br/com/ada/mscomprovantes/domain/enums/TipoChavePix.class
+br/com/ada/mscomprovantes/domain/dto/ComprovanteRequestDto.class
+br/com/ada/mscomprovantes/repository/ComprovanteRepository.class
+br/com/ada/mscomprovantes/service/ComprovanteNaoEncontradoException.class

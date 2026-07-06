@@ -3,7 +3,6 @@ package br.com.ada.mscomprovantes.domain.entity;
 import br.com.ada.mscomprovantes.domain.enums.TipoChavePix;
 import br.com.ada.mscomprovantes.domain.enums.TipoDocumento;
 import jakarta.persistence.*;
-import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -11,11 +10,6 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "comprovantes")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class Comprovante {
 
     @Id
@@ -62,4 +56,48 @@ public class Comprovante {
 
     @Column(name = "data_hora_requisicao", nullable = false)
     private LocalDateTime dataHoraRequisicao;
+
+    public Comprovante() {}
+
+    public UUID getId() { return id; }
+    public void setId(UUID id) { this.id = id; }
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+
+    public TipoDocumento getTipoDocumento() { return tipoDocumento; }
+    public void setTipoDocumento(TipoDocumento tipoDocumento) { this.tipoDocumento = tipoDocumento; }
+
+    public String getNumeroDocumento() { return numeroDocumento; }
+    public void setNumeroDocumento(String numeroDocumento) { this.numeroDocumento = numeroDocumento; }
+
+    public String getNumeroAgencia() { return numeroAgencia; }
+    public void setNumeroAgencia(String numeroAgencia) { this.numeroAgencia = numeroAgencia; }
+
+    public String getNumeroConta() { return numeroConta; }
+    public void setNumeroConta(String numeroConta) { this.numeroConta = numeroConta; }
+
+    public String getDigitoVerificadorConta() { return digitoVerificadorConta; }
+    public void setDigitoVerificadorConta(String digitoVerificadorConta) { this.digitoVerificadorConta = digitoVerificadorConta; }
+
+    public BigDecimal getValorTransacao() { return valorTransacao; }
+    public void setValorTransacao(BigDecimal valorTransacao) { this.valorTransacao = valorTransacao; }
+
+    public TipoChavePix getTipoChavePixDestino() { return tipoChavePixDestino; }
+    public void setTipoChavePixDestino(TipoChavePix tipoChavePixDestino) { this.tipoChavePixDestino = tipoChavePixDestino; }
+
+    public String getChavePixDestino() { return chavePixDestino; }
+    public void setChavePixDestino(String chavePixDestino) { this.chavePixDestino = chavePixDestino; }
+
+    public String getNomeClienteDestino() { return nomeClienteDestino; }
+    public void setNomeClienteDestino(String nomeClienteDestino) { this.nomeClienteDestino = nomeClienteDestino; }
+
+    public String getIdentificacaoPix() { return identificacaoPix; }
+    public void setIdentificacaoPix(String identificacaoPix) { this.identificacaoPix = identificacaoPix; }
+
+    public LocalDateTime getDataHoraTransacao() { return dataHoraTransacao; }
+    public void setDataHoraTransacao(LocalDateTime dataHoraTransacao) { this.dataHoraTransacao = dataHoraTransacao; }
+
+    public LocalDateTime getDataHoraRequisicao() { return dataHoraRequisicao; }
+    public void setDataHoraRequisicao(LocalDateTime dataHoraRequisicao) { this.dataHoraRequisicao = dataHoraRequisicao; }
 }

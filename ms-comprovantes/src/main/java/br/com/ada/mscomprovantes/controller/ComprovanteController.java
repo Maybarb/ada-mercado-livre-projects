@@ -5,7 +5,6 @@ import br.com.ada.mscomprovantes.domain.dto.ComprovanteRequestDto;
 import br.com.ada.mscomprovantes.domain.dto.ComprovanteResponseDto;
 import br.com.ada.mscomprovantes.service.ComprovanteService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +13,13 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/comprovantes")
-@RequiredArgsConstructor
 public class ComprovanteController {
 
     private final ComprovanteService comprovanteService;
+
+    public ComprovanteController(ComprovanteService comprovanteService) {
+        this.comprovanteService = comprovanteService;
+    }
 
     /**
      * POST /comprovantes

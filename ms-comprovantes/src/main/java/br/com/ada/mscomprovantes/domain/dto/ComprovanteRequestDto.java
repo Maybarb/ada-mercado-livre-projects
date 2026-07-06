@@ -3,17 +3,13 @@ package br.com.ada.mscomprovantes.domain.dto;
 import br.com.ada.mscomprovantes.domain.enums.TipoChavePix;
 import br.com.ada.mscomprovantes.domain.enums.TipoDocumento;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.*;
-import lombok.*;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class ComprovanteRequestDto {
 
     @NotBlank(message = "Nome é obrigatório")
@@ -63,4 +59,42 @@ public class ComprovanteRequestDto {
     @NotNull(message = "Data e hora da transação é obrigatória")
     @JsonProperty("data_hora_transacao")
     private LocalDateTime dataHoraTransacao;
+
+    public ComprovanteRequestDto() {}
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+
+    public TipoDocumento getTipoDocumento() { return tipoDocumento; }
+    public void setTipoDocumento(TipoDocumento tipoDocumento) { this.tipoDocumento = tipoDocumento; }
+
+    public String getNumeroDocumento() { return numeroDocumento; }
+    public void setNumeroDocumento(String numeroDocumento) { this.numeroDocumento = numeroDocumento; }
+
+    public String getNumeroAgencia() { return numeroAgencia; }
+    public void setNumeroAgencia(String numeroAgencia) { this.numeroAgencia = numeroAgencia; }
+
+    public String getNumeroConta() { return numeroConta; }
+    public void setNumeroConta(String numeroConta) { this.numeroConta = numeroConta; }
+
+    public String getDigitoVerificadorConta() { return digitoVerificadorConta; }
+    public void setDigitoVerificadorConta(String digitoVerificadorConta) { this.digitoVerificadorConta = digitoVerificadorConta; }
+
+    public BigDecimal getValorTransacao() { return valorTransacao; }
+    public void setValorTransacao(BigDecimal valorTransacao) { this.valorTransacao = valorTransacao; }
+
+    public TipoChavePix getTipoChavePixDestino() { return tipoChavePixDestino; }
+    public void setTipoChavePixDestino(TipoChavePix tipoChavePixDestino) { this.tipoChavePixDestino = tipoChavePixDestino; }
+
+    public String getChavePixDestino() { return chavePixDestino; }
+    public void setChavePixDestino(String chavePixDestino) { this.chavePixDestino = chavePixDestino; }
+
+    public String getNomeClienteDestino() { return nomeClienteDestino; }
+    public void setNomeClienteDestino(String nomeClienteDestino) { this.nomeClienteDestino = nomeClienteDestino; }
+
+    public String getIdentificacaoPix() { return identificacaoPix; }
+    public void setIdentificacaoPix(String identificacaoPix) { this.identificacaoPix = identificacaoPix; }
+
+    public LocalDateTime getDataHoraTransacao() { return dataHoraTransacao; }
+    public void setDataHoraTransacao(LocalDateTime dataHoraTransacao) { this.dataHoraTransacao = dataHoraTransacao; }
 }
